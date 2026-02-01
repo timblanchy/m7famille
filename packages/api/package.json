@@ -1,0 +1,27 @@
+{
+  "name": "@m7famille/api",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "check-types": "tsc --noEmit"
+  },
+  "exports": {
+    "./*": {
+      "types": "./dist/*.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "@effect/platform": "catalog:",
+    "effect": "catalog:"
+  },
+  "devDependencies": {
+    "@m7famille/typescript-config": "workspace:^"
+  }
+}

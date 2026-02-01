@@ -49,4 +49,3 @@ You will be able to access :
 
 - Web application at `http://localhost:3000`
 - API swagger documentation at `http://localhost:8000/docs`
-
