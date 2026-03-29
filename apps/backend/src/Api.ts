@@ -16,6 +16,7 @@ import { FamilyGroupLive } from "./presentation/groups/FamilyGroupLive.js"
 import { HealthGroupLive } from "./presentation/groups/HealthGroupLive.js"
 import { MemberGroupLive } from "./presentation/groups/MemberGroupLive.js"
 import { AuthorizationMiddlewareLive } from "./presentation/middlewares/AuthorizationMiddlewareLive.js"
+import { CorsMiddlewareLive } from "./presentation/middlewares/CorsMiddlewareLive.js"
 import { LoggerMiddlewareLive } from "./presentation/middlewares/LoggerMiddlewareLive.js"
 
 const ApiLive = HttpApiBuilder.api(Api).pipe(
@@ -28,6 +29,7 @@ const ApiLive = HttpApiBuilder.api(Api).pipe(
 )
 
 const ServerLive = HttpApiBuilder.serve().pipe(
+  Layer.provide(CorsMiddlewareLive),
   Layer.provide(HttpApiSwagger.layer()),
   Layer.provide(ApiLive),
   Layer.provide(NodeHttpLive)
