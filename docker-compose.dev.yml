@@ -5,17 +5,28 @@ services:
     env_file:
       - .env
     ports:
-      - "${PORT_POSTGRES:-5432}:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U stemma -d stemma"]
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
       interval: 30s
       timeout: 3s
       retries: 3
     networks:
       - stemma-network
     restart: unless-stopped
+  
+  adminer:
+    image: adminer:latest
+    container_name: stemma-adminer-dev
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    stop_signal: SIGINT
+    networks:
+      - stemma-network
+
 
 networks:
   stemma-network:
