@@ -1,0 +1,44 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+dist
+**/dist
+
+# Development files
+*.log
+logs
+**/logs
+
+# Test files
+test
+vitest.config.ts
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Git
+.git
+.gitignore
+
+# Environment files (should be provided at runtime)
+.env
+.env.local
+.env.*.local
+
+# Documentation
+README.md
+LICENSE
+
+# TypeScript config (not needed in production)
+tsconfig*.json
+eslint.config.mjs
+
+# Source files (only dist is needed in production)
+src
+**/src

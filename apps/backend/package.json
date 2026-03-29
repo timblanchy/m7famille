@@ -1,0 +1,46 @@
+{
+  "name": "@m7famille/backend",
+  "version": "1.0.0",
+  "description": "Backend application for m7famille",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "dotenvx run -f ../../.env -- tsx src/Api.ts",
+    "build": "tsc -b tsconfig.app.json",
+    "check-types": "tsc --build --noEmit",
+    "test": "vitest run --config vitest.config.ts",
+    "lint": "eslint",
+    "lint-fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "@m7famille/api": "workspace:^",
+    "@effect/platform": "catalog:",
+    "@effect/platform-node": "catalog:",
+    "effect": "catalog:"
+  },
+  "devDependencies": {
+    "@m7famille/typescript-config": "workspace:^",
+    "@dotenvx/dotenvx": "^1.57.2",
+    "@effect/eslint-plugin": "^0.3.2",
+    "@effect/language-service": "latest",
+    "@effect/vitest": "^0.27.0",
+    "@eslint/compat": "2.0.0",
+    "@eslint/eslintrc": "3.3.3",
+    "@eslint/js": "catalog:",
+    "@types/node": "catalog:",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "eslint": "catalog:",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-codegen": "^0.34.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sort-destructure-keys": "^2.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

@@ -1,0 +1,39 @@
+import { Api } from "@m7famille/api/Api"
+import { User } from "@m7famille/api/domain/User"
+import type { Authorization } from "@m7famille/api/presentation/middlewares/Authorization"
+import { HttpApiBuilder } from "@effect/platform"
+import type { ApiGroup } from "@effect/platform/HttpApiGroup"
+import type { Layer } from "effect"
+import { Effect } from "effect"
+
+export const AuthGroupLive: Layer.Layer<
+  ApiGroup<"Api", "Auth">,
+  never,
+  Authorization
+> = HttpApiBuilder.group(Api, "Auth", (handlers) =>
+  Effect.succeed(
+    handlers
+      .handle("login", () =>
+        // TODO: implement real login
+        Effect.succeed(crypto.randomUUID())
+      )
+      .handle("me", () =>
+        // TODO: implement real user lookup
+        Effect.succeed(
+          new User({
+            id: "placeholder",
+            email: "placeholder@example.com",
+            name: "Placeholder",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          })
+        )
+      )
+      .handle(
+        "logout",
+        () =>
+          // TODO: implement real logout
+          Effect.void
+      )
+  )
+)

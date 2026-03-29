@@ -18,4 +18,7 @@ catalog:
   vitest: ^3.2.4
 
 onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
   - msgpackr-extract
+  - unrs-resolver
