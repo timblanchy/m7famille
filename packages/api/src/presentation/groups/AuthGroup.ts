@@ -9,7 +9,7 @@ import {
 import { User } from "../../domain/User.js"
 import { Authorization } from "../middlewares/Authorization.js"
 
-const login = HttpApiEndpoint.get("login", "/login")
+const login = HttpApiEndpoint.post("login", "/login")
   .addSuccess(Schema.UUID)
   .addError(UnauthorizedError)
 

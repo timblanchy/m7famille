@@ -33,24 +33,6 @@ export class UnauthorizedError extends Schema.TaggedError<UnauthorizedError>()(
   HttpApiSchema.annotations({ status: 401 })
 ) {}
 
-export class InvalidCredentialsError extends Schema.TaggedError<InvalidCredentialsError>()(
-  "InvalidCredentialsError",
-  {},
-  HttpApiSchema.annotations({ status: 400 })
-) {}
-
-export class DatahubIntegrityError extends Schema.TaggedError<DatahubIntegrityError>()(
-  "DatahubIntegrityError",
-  { message: Schema.String },
-  HttpApiSchema.annotations({ status: 400 })
-) {
-  static fromParseError(error: ParseError): DatahubIntegrityError {
-    return new DatahubIntegrityError({
-      message: error.message.slice(0, 2000),
-    })
-  }
-}
-
 export class ExternalServiceError extends Schema.TaggedError<ExternalServiceError>()(
   "ExternalServiceError",
   { message: Schema.String },

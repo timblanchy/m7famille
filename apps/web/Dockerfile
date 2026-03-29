@@ -5,9 +5,6 @@ FROM base AS pruner
 
 WORKDIR /app
 
-ARG VITE_API_URL
-ENV VITE_API_URL=${VITE_API_URL}
-
 RUN npm install --global turbo@2.7.6
 COPY . .
 RUN turbo prune @m7famille/web --docker
@@ -33,6 +30,6 @@ FROM caddy:2-alpine AS production
 COPY --from=builder /app/apps/web/dist /usr/share/caddy
 COPY --from=builder /app/apps/web/Caddyfile /etc/caddy/Caddyfile
 
-EXPOSE 3001
+EXPOSE 3030
 
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
