@@ -1,6 +1,6 @@
-import { Api } from "@m7famille/api/Api"
 import { HttpApiBuilder, HttpApiSwagger } from "@effect/platform"
 import { NodeRuntime } from "@effect/platform-node"
+import { Api } from "@m7famille/api/Api"
 import {
   Config,
   Effect,

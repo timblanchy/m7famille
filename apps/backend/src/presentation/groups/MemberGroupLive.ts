@@ -1,11 +1,10 @@
+import { HttpApiBuilder } from "@effect/platform"
+import type { ApiGroup } from "@effect/platform/HttpApiGroup"
 import { Api } from "@m7famille/api/Api"
 import { Member } from "@m7famille/api/domain/Member"
 import type { Authorization } from "@m7famille/api/presentation/middlewares/Authorization"
-import { HttpApiBuilder } from "@effect/platform"
-import type { ApiGroup } from "@effect/platform/HttpApiGroup"
-import { Option } from "effect"
 import type { Layer } from "effect"
-import { Effect } from "effect"
+import { Effect, Option } from "effect"
 
 export const MemberGroupLive: Layer.Layer<
   ApiGroup<"Api", "Member">,
