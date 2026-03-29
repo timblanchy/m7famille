@@ -6,12 +6,17 @@ import {
   InvalidCredentialsError,
 } from "@stemma/api/domain/Errors"
 import { CurrentSession } from "@stemma/api/domain/Session"
+import type { DatabaseError } from "@stemma/db"
 import { Effect } from "effect"
 import { PasswordService } from "../../domain/PasswordService.js"
 import { SessionRepository } from "../../domain/SessionRepository.js"
 import { UserRepository } from "../../domain/UserRepository.js"
 
-const mapDbError = Effect.mapError(() => new InternalServerError())
+const mapDbError = <A, R>(effect: Effect.Effect<A, DatabaseError, R>) =>
+  effect.pipe(
+    Effect.tapError((e) => Effect.logError("Database error", e)),
+    Effect.mapError(() => new InternalServerError())
+  )
 
 export const AuthGroupLive = HttpApiBuilder.group(Api, "Auth", (handlers) =>
   Effect.gen(function* () {

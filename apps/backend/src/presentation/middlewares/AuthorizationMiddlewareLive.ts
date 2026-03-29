@@ -16,8 +16,10 @@ export const AuthorizationMiddlewareLive = Layer.effect(
               ? Effect.succeed(session)
               : Effect.fail(new UnauthorizedError())
           ),
-          Effect.catchTag("DatabaseError", () =>
-            Effect.fail(new UnauthorizedError())
+          Effect.catchTag("DatabaseError", (e) =>
+            Effect.logError("Database error in auth middleware", e).pipe(
+              Effect.flatMap(() => Effect.fail(new UnauthorizedError()))
+            )
           )
         ),
     }
