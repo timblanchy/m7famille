@@ -1,5 +1,5 @@
 import { FetchHttpClient, HttpApiClient } from "@effect/platform"
-import { Api } from "@m7famille/api/Api"
+import { Api } from "@stemma/api/Api"
 import { type Effect, ManagedRuntime } from "effect"
 
 if (!import.meta.env.VITE_API_URL) {

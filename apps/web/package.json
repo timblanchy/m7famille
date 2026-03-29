@@ -1,6 +1,6 @@
 {
-  "name": "@m7famille/web",
-  "description": "Web application for the m7famille project",
+  "name": "@stemma/web",
+  "description": "Web application for the stemma project",
   "private": true,
   "type": "module",
   "engines": {
@@ -15,8 +15,8 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@m7famille/api": "workspace:^",
-    "@m7famille/typescript-config": "workspace:^",
+    "@stemma/api": "workspace:^",
+    "@stemma/typescript-config": "workspace:^",
     "@effect/platform": "catalog:",
     "@tailwindcss/vite": "^4.2.2",
     "@tanstack/react-query": "^5.95.0",
@@ -35,7 +35,7 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
-    "@m7famille/eslint-config": "workspace:^",
+    "@stemma/eslint-config": "workspace:^",
     "@tanstack/devtools-vite": "^0.3.12",
     "@tanstack/eslint-config": "^0.3.4",
     "@types/node": "catalog:",

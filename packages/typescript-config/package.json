@@ -1,7 +1,7 @@
 {
-  "name": "@m7famille/typescript-config",
+  "name": "@stemma/typescript-config",
   "version": "0.0.0",
-  "description": "Shared TypeScript configuration for the m7famille project",
+  "description": "Shared TypeScript configuration for the stemma project",
   "private": true,
   "license": "MIT"
 }

@@ -1,6 +1,6 @@
 //  @ts-check
 
-import { config as eslintConfig } from "@m7famille/eslint-config/base"
+import { config as eslintConfig } from "@stemma/eslint-config/base"
 import { tanstackConfig } from "@tanstack/eslint-config"
 
 export default [

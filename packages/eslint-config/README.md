@@ -1,3 +1,3 @@
-# `@m7famille/eslint-config`
+# `@stemma/eslint-config`
 
 Collection of internal eslint configurations.

@@ -87,10 +87,10 @@ importers:
       '@effect/platform-node':
         specifier: 'catalog:'
         version: 0.103.0(@effect/cluster@0.55.0(@effect/platform@0.93.8(effect@3.19.15))(@effect/rpc@0.72.2(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(@effect/sql@0.48.6(@effect/experimental@0.57.11(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(@effect/workflow@0.15.2(@effect/experimental@0.57.11(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(@effect/platform@0.93.8(effect@3.19.15))(@effect/rpc@0.72.2(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(effect@3.19.15))(effect@3.19.15))(@effect/platform@0.93.8(effect@3.19.15))(@effect/rpc@0.72.2(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(@effect/sql@0.48.6(@effect/experimental@0.57.11(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(@effect/platform@0.93.8(effect@3.19.15))(effect@3.19.15))(effect@3.19.15)
-      '@m7famille/api':
+      '@stemma/api':
         specifier: workspace:^
         version: link:../../packages/api
-      '@m7famille/db':
+      '@stemma/db':
         specifier: workspace:^
         version: link:../../packages/db
       drizzle-orm:
@@ -121,7 +121,7 @@ importers:
       '@eslint/js':
         specifier: 'catalog:'
         version: 9.39.2
-      '@m7famille/typescript-config':
+      '@stemma/typescript-config':
         specifier: workspace:^
         version: link:../../packages/typescript-config
       '@types/node':
@@ -166,10 +166,10 @@ importers:
       '@effect/platform':
         specifier: 'catalog:'
         version: 0.93.8(effect@3.19.15)
-      '@m7famille/api':
+      '@stemma/api':
         specifier: workspace:^
         version: link:../../packages/api
-      '@m7famille/typescript-config':
+      '@stemma/typescript-config':
         specifier: workspace:^
         version: link:../../packages/typescript-config
       '@tailwindcss/vite':
@@ -218,7 +218,7 @@ importers:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.9.3)(vite@7.3.1(@types/node@24.12.0)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0))
     devDependencies:
-      '@m7famille/eslint-config':
+      '@stemma/eslint-config':
         specifier: workspace:^
         version: link:../../packages/eslint-config
       '@tanstack/devtools-vite':
@@ -261,7 +261,7 @@ importers:
         specifier: 'catalog:'
         version: 3.19.15
     devDependencies:
-      '@m7famille/typescript-config':
+      '@stemma/typescript-config':
         specifier: workspace:^
         version: link:../typescript-config
 
@@ -277,7 +277,7 @@ importers:
         specifier: 'catalog:'
         version: 8.20.0
     devDependencies:
-      '@m7famille/typescript-config':
+      '@stemma/typescript-config':
         specifier: workspace:^
         version: link:../typescript-config
       '@types/node':

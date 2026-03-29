@@ -1,6 +1,6 @@
-import { Session } from "@m7famille/api/domain/Session"
-import { User } from "@m7famille/api/domain/User"
-import { Authorization } from "@m7famille/api/presentation/middlewares/Authorization"
+import { Session } from "@stemma/api/domain/Session"
+import { User } from "@stemma/api/domain/User"
+import { Authorization } from "@stemma/api/presentation/middlewares/Authorization"
 import { Effect, Layer } from "effect"
 
 export const AuthorizationMiddlewareLive = Layer.effect(

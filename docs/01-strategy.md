@@ -1,4 +1,4 @@
-# m7famille — Strategy & Roadmap
+# stemma — Strategy & Roadmap
 
 ## Vision
 

@@ -1,7 +1,7 @@
 import { HttpApiBuilder, HttpApiSwagger } from "@effect/platform"
 import { NodeRuntime } from "@effect/platform-node"
-import { Api } from "@m7famille/api/Api"
-import { DrizzleClient } from "@m7famille/db"
+import { Api } from "@stemma/api/Api"
+import { DrizzleClient } from "@stemma/db"
 import {
   Config,
   Effect,

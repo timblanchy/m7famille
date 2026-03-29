@@ -1,5 +1,5 @@
-import type { User } from "@m7famille/api/domain/User"
-import type { DatabaseError } from "@m7famille/db"
+import type { User } from "@stemma/api/domain/User"
+import type { DatabaseError } from "@stemma/db"
 import { Context, type Effect } from "effect"
 
 export interface IUserRepository {

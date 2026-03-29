@@ -1,4 +1,4 @@
-# m7famille — Domain Model
+# stemma — Domain Model
 
 ## Entities
 

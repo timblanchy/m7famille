@@ -1,7 +1,7 @@
 {
-  "name": "@m7famille/eslint-config",
+  "name": "@stemma/eslint-config",
   "version": "0.0.0",
-  "description": "Shared ESLint configuration for the m7famille project",
+  "description": "Shared ESLint configuration for the stemma project",
   "type": "module",
   "private": true,
   "exports": {

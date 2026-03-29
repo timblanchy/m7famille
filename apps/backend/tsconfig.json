@@ -1,5 +1,5 @@
 {
-  "extends": "@m7famille/typescript-config/effect.json",
+  "extends": "@stemma/typescript-config/effect.json",
   "files": [],
   "include": [],
   "references": [

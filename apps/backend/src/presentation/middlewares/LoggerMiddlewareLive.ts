@@ -1,4 +1,4 @@
-import { Logger } from "@m7famille/api/presentation/middlewares/Logger"
+import { Logger } from "@stemma/api/presentation/middlewares/Logger"
 import { HttpServerRequest } from "@effect/platform"
 import { Effect, Layer } from "effect"
 

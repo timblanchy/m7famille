@@ -7,7 +7,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@m7famille/backend": path.join(__dirname, "src"),
+      "@stemma/backend": path.join(__dirname, "src"),
     },
   },
 })

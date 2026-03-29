@@ -1,5 +1,5 @@
 {
-  "name": "@m7famille/api",
+  "name": "@stemma/api",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -22,6 +22,6 @@
     "effect": "catalog:"
   },
   "devDependencies": {
-    "@m7famille/typescript-config": "workspace:^"
+    "@stemma/typescript-config": "workspace:^"
   }
 }

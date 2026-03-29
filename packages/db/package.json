@@ -1,7 +1,7 @@
 {
-  "name": "@m7famille/db",
+  "name": "@stemma/db",
   "version": "1.0.0",
-  "description": "PostgreSQL client with Drizzle ORM for m7famille",
+  "description": "PostgreSQL client with Drizzle ORM for stemma",
   "private": true,
   "type": "module",
   "main": "dist/index.js",
@@ -31,7 +31,7 @@
     "pg": "catalog:"
   },
   "devDependencies": {
-    "@m7famille/typescript-config": "workspace:^",
+    "@stemma/typescript-config": "workspace:^",
     "@types/node": "catalog:",
     "@types/pg": "catalog:",
     "dotenv": "catalog:",
