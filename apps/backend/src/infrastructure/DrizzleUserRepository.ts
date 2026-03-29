@@ -42,6 +42,21 @@ export const DrizzleUserRepositoryLive = Layer.effect(
           )
           .pipe(Effect.map((row) => (row ? toUser(row) : null))),
 
+      findWithPasswordByEmail: (email) =>
+        drizzle
+          .use((db) =>
+            db
+              .select()
+              .from(users)
+              .where(eq(users.email, email))
+              .then((rows) => rows[0] ?? null)
+          )
+          .pipe(
+            Effect.map((row) =>
+              row ? { user: toUser(row), password: row.password } : null
+            )
+          ),
+
       create: (params) =>
         drizzle
           .use((db) =>

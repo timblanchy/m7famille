@@ -93,6 +93,9 @@ importers:
       '@stemma/db':
         specifier: workspace:^
         version: link:../../packages/db
+      bcryptjs:
+        specifier: ^3.0.2
+        version: 3.0.3
       drizzle-orm:
         specifier: 'catalog:'
         version: 0.44.7(@types/pg@8.20.0)(pg@8.20.0)
@@ -1998,6 +2001,10 @@ packages:
 
   baseline-browser-mapping@2.9.19:
     resolution: {integrity: sha512-ipDqC8FrAl/76p2SSWKSI+H9tFwm7vYqXQrItCuiVPt26Km0jS+NzSsBWAaBusvSbQcfJG+JitdMm+wZAgTYqg==}
+    hasBin: true
+
+  bcryptjs@3.0.3:
+    resolution: {integrity: sha512-GlF5wPWnSa/X5LKM1o0wz0suXIINz1iHRLvTS+sLyi7XPbe5ycmYI3DlZqVGZZtDgl4DmasFg7gOB3JYbphV5g==}
     hasBin: true
 
   binary-extensions@2.3.0:
@@ -5645,6 +5652,8 @@ snapshots:
   balanced-match@1.0.2: {}
 
   baseline-browser-mapping@2.9.19: {}
+
+  bcryptjs@3.0.3: {}
 
   binary-extensions@2.3.0: {}
 

@@ -22,7 +22,7 @@ services:
     container_name: stemma-adminer-dev
     restart: unless-stopped
     ports:
-      - "8081:8081"
+      - "8081:8080"
     stop_signal: SIGINT
     networks:
       - stemma-network

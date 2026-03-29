@@ -7,6 +7,9 @@ export interface IUserRepository {
   readonly findByEmail: (
     email: string
   ) => Effect.Effect<User | null, DatabaseError>
+  readonly findWithPasswordByEmail: (
+    email: string
+  ) => Effect.Effect<{ user: User; password: string } | null, DatabaseError>
   readonly create: (params: {
     email: string
     password: string
