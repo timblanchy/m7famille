@@ -11,7 +11,7 @@ import {
   LogLevel,
   Option,
 } from "effect"
-import { BcryptPasswordServiceLive } from "./infrastructure/BcryptPasswordService.js"
+import { Argon2PasswordServiceLive } from "./infrastructure/Argon2PasswordService.js"
 import { DrizzleSessionRepositoryLive } from "./infrastructure/DrizzleSessionRepository.js"
 import { DrizzleUserRepositoryLive } from "./infrastructure/DrizzleUserRepository.js"
 import { NodeHttpLive } from "./NodeHttpLive.js"
@@ -32,7 +32,7 @@ const ApiLive = HttpApiBuilder.api(Api).pipe(
   Layer.provide(AuthorizationMiddlewareLive),
   Layer.provide(DrizzleUserRepositoryLive),
   Layer.provide(DrizzleSessionRepositoryLive),
-  Layer.provide(BcryptPasswordServiceLive),
+  Layer.provide(Argon2PasswordServiceLive),
   Layer.provide(DrizzleClient.Default)
 )
 
