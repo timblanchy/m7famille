@@ -7,7 +7,7 @@ WORKDIR /app
 
 RUN npm install --global turbo@2.7.6
 COPY . .
-RUN turbo prune @m7famille/backend --docker
+RUN turbo prune @stemma/backend --docker
 
 FROM base AS builder
 
@@ -22,8 +22,8 @@ RUN pnpm config set inject-workspace-packages=true
 RUN pnpm install --no-frozen-lockfile --ignore-scripts
 COPY --from=pruner /app/out/full/ .
 
-RUN pnpm --filter=@m7famille/backend... build
-RUN pnpm deploy --prod --filter=@m7famille/backend /prod
+RUN pnpm --filter=@stemma/backend... build
+RUN pnpm deploy --prod --filter=@stemma/backend /prod
 
 FROM base AS runner
 

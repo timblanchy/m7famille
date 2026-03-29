@@ -1,7 +1,7 @@
 {
-  "name": "@m7famille/backend",
+  "name": "@stemma/backend",
   "version": "1.0.0",
-  "description": "Backend application for m7famille",
+  "description": "Backend application for stemma",
   "private": true,
   "type": "module",
   "engines": {
@@ -16,13 +16,15 @@
     "lint-fix": "eslint --fix ."
   },
   "dependencies": {
-    "@m7famille/api": "workspace:^",
     "@effect/platform": "catalog:",
     "@effect/platform-node": "catalog:",
+    "@stemma/api": "workspace:^",
+    "@stemma/db": "workspace:^",
+    "argon2": "^0.44.0",
+    "drizzle-orm": "catalog:",
     "effect": "catalog:"
   },
   "devDependencies": {
-    "@m7famille/typescript-config": "workspace:^",
     "@dotenvx/dotenvx": "^1.57.2",
     "@effect/eslint-plugin": "^0.3.2",
     "@effect/language-service": "latest",
@@ -30,6 +32,7 @@
     "@eslint/compat": "2.0.0",
     "@eslint/eslintrc": "3.3.3",
     "@eslint/js": "catalog:",
+    "@stemma/typescript-config": "workspace:^",
     "@types/node": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
     "@typescript-eslint/parser": "catalog:",

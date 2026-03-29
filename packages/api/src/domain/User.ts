@@ -1,7 +1,7 @@
 import * as S from "effect/Schema"
 
 export class User extends S.Class<User>("User")({
-  id: S.String,
+  id: S.UUID,
   email: S.String,
   name: S.String,
   createdAt: S.Date,

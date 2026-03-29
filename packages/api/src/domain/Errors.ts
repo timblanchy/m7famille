@@ -33,6 +33,12 @@ export class UnauthorizedError extends Schema.TaggedError<UnauthorizedError>()(
   HttpApiSchema.annotations({ status: 401 })
 ) {}
 
+export class InvalidCredentialsError extends Schema.TaggedError<InvalidCredentialsError>()(
+  "InvalidCredentialsError",
+  {},
+  HttpApiSchema.annotations({ status: 400 })
+) {}
+
 export class ExternalServiceError extends Schema.TaggedError<ExternalServiceError>()(
   "ExternalServiceError",
   { message: Schema.String },

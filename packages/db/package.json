@@ -1,0 +1,41 @@
+{
+  "name": "@stemma/db",
+  "version": "1.0.0",
+  "description": "PostgreSQL client with Drizzle ORM for stemma",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "check-types": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:drop": "drizzle-kit drop",
+    "db:migrate:prod": "node dist/migrate.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schema/index.d.ts",
+      "default": "./dist/schema/index.js"
+    }
+  },
+  "dependencies": {
+    "drizzle-orm": "catalog:",
+    "effect": "catalog:",
+    "pg": "catalog:"
+  },
+  "devDependencies": {
+    "@stemma/typescript-config": "workspace:^",
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
+    "dotenv": "catalog:",
+    "drizzle-kit": "^0.31.10",
+    "typescript": "catalog:"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "@stemma/typescript-config/effect.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "drizzle.config.ts"]
+}

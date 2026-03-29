@@ -1,5 +1,5 @@
 {
-  "name": "m7famille",
+  "name": "stemma",
   "description": "",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
+    "db:generate": "turbo run db:generate --filter=@stemma/db",
+    "db:migrate": "turbo run db:migrate --filter=@stemma/db",
     "prepare": "husky"
   },
   "devDependencies": {

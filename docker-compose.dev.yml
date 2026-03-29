@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: stemma-postgres
+    env_file:
+      - .env
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    networks:
+      - stemma-network
+    restart: unless-stopped
+  
+  adminer:
+    image: adminer:latest
+    container_name: stemma-adminer-dev
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    stop_signal: SIGINT
+    networks:
+      - stemma-network
+
+
+networks:
+  stemma-network:
+
+volumes:
+  postgres-data:

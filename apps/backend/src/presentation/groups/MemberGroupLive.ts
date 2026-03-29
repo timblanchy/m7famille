@@ -1,8 +1,8 @@
 import { HttpApiBuilder } from "@effect/platform"
 import type { ApiGroup } from "@effect/platform/HttpApiGroup"
-import { Api } from "@m7famille/api/Api"
-import { Member } from "@m7famille/api/domain/Member"
-import type { Authorization } from "@m7famille/api/presentation/middlewares/Authorization"
+import { Api } from "@stemma/api/Api"
+import { Member } from "@stemma/api/domain/Member"
+import type { Authorization } from "@stemma/api/presentation/middlewares/Authorization"
 import type { Layer } from "effect"
 import { Effect, Option } from "effect"
 

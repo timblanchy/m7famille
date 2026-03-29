@@ -1,4 +1,4 @@
-# m7famille — Architecture Decisions
+# stemma — Architecture Decisions
 
 ## Tech Stack
 
@@ -26,11 +26,11 @@
 
 ### Monorepo
 
-| Concern             | Choice           | Why                                                                  |
-| ------------------- | ---------------- | -------------------------------------------------------------------- |
-| Package manager     | pnpm             | Fast, strict, workspace support                                      |
-| Build orchestration | Turborepo        | Caching, parallel builds, task dependencies                          |
-| Shared packages     | `@m7famille/api` | Single source of truth for API contract (schemas, errors, endpoints) |
+| Concern             | Choice        | Why                                                                  |
+| ------------------- | ------------- | -------------------------------------------------------------------- |
+| Package manager     | pnpm          | Fast, strict, workspace support                                      |
+| Build orchestration | Turborepo     | Caching, parallel builds, task dependencies                          |
+| Shared packages     | `@stemma/api` | Single source of truth for API contract (schemas, errors, endpoints) |
 
 ---
 
@@ -40,7 +40,7 @@
 ┌─────────────────────────────────────────────────┐
 │                   Frontend (SPA)                │
 │  React + TanStack Router + Tailwind + shadcn    │
-│  Effect HTTP client (typed from @m7famille/api) │
+│  Effect HTTP client (typed from @stemma/api) │
 └──────────────────────┬──────────────────────────┘
                        │ HTTP (JSON)
                        ▼
@@ -76,7 +76,7 @@ A single-page app (no Next.js / Remix / server components).
 - Backend is already Effect-based — no need for a Node.js rendering server in front
 - TanStack Router gives us route-level data loading without SSR
 
-### 2. Shared API package (`@m7famille/api`)
+### 2. Shared API package (`@stemma/api`)
 
 The `packages/api` package defines the full API contract: endpoints, request/response schemas, errors.
 

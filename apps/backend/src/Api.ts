@@ -1,6 +1,7 @@
 import { HttpApiBuilder, HttpApiSwagger } from "@effect/platform"
 import { NodeRuntime } from "@effect/platform-node"
-import { Api } from "@m7famille/api/Api"
+import { Api } from "@stemma/api/Api"
+import { DrizzleClient } from "@stemma/db"
 import {
   Config,
   Effect,
@@ -10,6 +11,10 @@ import {
   LogLevel,
   Option,
 } from "effect"
+import { AppConfig } from "./AppConfig.js"
+import { Argon2PasswordServiceLive } from "./infrastructure/Argon2PasswordService.js"
+import { DrizzleSessionRepositoryLive } from "./infrastructure/DrizzleSessionRepository.js"
+import { DrizzleUserRepositoryLive } from "./infrastructure/DrizzleUserRepository.js"
 import { NodeHttpLive } from "./NodeHttpLive.js"
 import { AuthGroupLive } from "./presentation/groups/AuthGroupLive.js"
 import { FamilyGroupLive } from "./presentation/groups/FamilyGroupLive.js"
@@ -25,7 +30,12 @@ const ApiLive = HttpApiBuilder.api(Api).pipe(
   Layer.provide(FamilyGroupLive),
   Layer.provide(MemberGroupLive),
   Layer.provide(LoggerMiddlewareLive),
-  Layer.provide(AuthorizationMiddlewareLive)
+  Layer.provide(AuthorizationMiddlewareLive),
+  Layer.provide(DrizzleUserRepositoryLive),
+  Layer.provide(DrizzleSessionRepositoryLive),
+  Layer.provide(Argon2PasswordServiceLive),
+  Layer.provide(DrizzleClient.Default),
+  Layer.provide(AppConfig.Default)
 )
 
 const ServerLive = HttpApiBuilder.serve().pipe(

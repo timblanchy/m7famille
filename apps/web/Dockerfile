@@ -7,7 +7,7 @@ WORKDIR /app
 
 RUN npm install --global turbo@2.7.6
 COPY . .
-RUN turbo prune @m7famille/web --docker
+RUN turbo prune @stemma/web --docker
 
 FROM base AS builder
 
@@ -23,7 +23,7 @@ RUN pnpm config set inject-workspace-packages=true
 RUN pnpm install --no-frozen-lockfile --ignore-scripts
 COPY --from=pruner /app/out/full/ .
 
-RUN pnpm --filter=@m7famille/web... build
+RUN pnpm --filter=@stemma/web... build
 
 FROM caddy:2-alpine AS production
 
