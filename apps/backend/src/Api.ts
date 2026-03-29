@@ -1,6 +1,7 @@
 import { HttpApiBuilder, HttpApiSwagger } from "@effect/platform"
 import { NodeRuntime } from "@effect/platform-node"
 import { Api } from "@m7famille/api/Api"
+import { DrizzleClient } from "@m7famille/db"
 import {
   Config,
   Effect,
@@ -10,6 +11,7 @@ import {
   LogLevel,
   Option,
 } from "effect"
+import { DrizzleUserRepositoryLive } from "./infrastructure/DrizzleUserRepository.js"
 import { NodeHttpLive } from "./NodeHttpLive.js"
 import { AuthGroupLive } from "./presentation/groups/AuthGroupLive.js"
 import { FamilyGroupLive } from "./presentation/groups/FamilyGroupLive.js"
@@ -25,7 +27,9 @@ const ApiLive = HttpApiBuilder.api(Api).pipe(
   Layer.provide(FamilyGroupLive),
   Layer.provide(MemberGroupLive),
   Layer.provide(LoggerMiddlewareLive),
-  Layer.provide(AuthorizationMiddlewareLive)
+  Layer.provide(AuthorizationMiddlewareLive),
+  Layer.provide(DrizzleUserRepositoryLive),
+  Layer.provide(DrizzleClient.Default)
 )
 
 const ServerLive = HttpApiBuilder.serve().pipe(

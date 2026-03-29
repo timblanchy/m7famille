@@ -9,6 +9,8 @@
     "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
+    "db:generate": "turbo run db:generate --filter=@m7famille/db",
+    "db:migrate": "turbo run db:migrate --filter=@m7famille/db",
     "prepare": "husky"
   },
   "devDependencies": {

@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@m7famille/api": "workspace:^",
+    "@m7famille/db": "workspace:^",
+    "drizzle-orm": "catalog:",
     "@effect/platform": "catalog:",
     "@effect/platform-node": "catalog:",
     "effect": "catalog:"

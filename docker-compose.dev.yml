@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: m7famille-postgres
+    env_file:
+      - .env
+    ports:
+      - "${PORT_POSTGRES:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U m7famille -d m7famille"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    networks:
+      - m7famille-network
+    restart: unless-stopped
+
+networks:
+  m7famille-network:
+
+volumes:
+  postgres-data:

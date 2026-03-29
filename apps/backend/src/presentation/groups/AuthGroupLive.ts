@@ -21,7 +21,7 @@ export const AuthGroupLive: Layer.Layer<
         // TODO: implement real user lookup
         Effect.succeed(
           new User({
-            id: "placeholder",
+            id: crypto.randomUUID(),
             email: "placeholder@example.com",
             name: "Placeholder",
             createdAt: new Date(),

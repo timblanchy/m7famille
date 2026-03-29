@@ -20,6 +20,12 @@
     },
     "test": {
       "dependsOn": ["^test"]
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
     }
   }
 }

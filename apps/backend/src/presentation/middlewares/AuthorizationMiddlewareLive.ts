@@ -14,7 +14,7 @@ export const AuthorizationMiddlewareLive = Layer.effect(
           createdAt: new Date(),
           token: "placeholder",
           user: new User({
-            id: "placeholder",
+            id: crypto.randomUUID(),
             email: "placeholder@example.com",
             name: "Placeholder",
             createdAt: new Date(),
